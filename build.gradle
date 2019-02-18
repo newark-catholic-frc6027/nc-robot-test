@@ -43,6 +43,11 @@ def includeDesktopSupport = false
 // Maven central needed for JUnit
 repositories {
     mavenCentral()
+    maven {
+        name 'frcHome'
+        url gradle.ext.frcHomeMaven
+    }
+
 }
 
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
