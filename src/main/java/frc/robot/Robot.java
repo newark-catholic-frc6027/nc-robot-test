@@ -7,7 +7,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
    private CANSparkMax rightGearBoxSlave1 = null;
    private CANSparkMax leftGearBoxSlave1 = null;
 
-   private RobotDrive robotDrive = null;
+   private DifferentialDrive robotDrive = null;
    private XboxJoystick joystick = null;
 
   /**
@@ -57,7 +57,7 @@ public class Robot extends TimedRobot {
     this.rightGearBoxSlave1.follow(rightGearBoxMasterMotor, true);
     this.leftGearBoxSlave1.follow(leftGearBoxMasterMotor, true);
 
-    this.robotDrive = new RobotDrive(leftGearBoxMasterMotor, rightGearBoxMasterMotor);
+    this.robotDrive = new DifferentialDrive(leftGearBoxMasterMotor, rightGearBoxMasterMotor);
     this.joystick = new XboxJoystick(0);
  
   }
@@ -117,7 +117,7 @@ public class Robot extends TimedRobot {
   }
 
   protected void runDrivetrainIfNeeded() {
-    this.robotDrive.arcadeDrive(this.joystick.getLeftAxis(), this.joystick.getRightAxis());
+    this.robotDrive.tankDrive(this.joystick.getLeftAxis(), this.joystick.getRightAxis());
 
   }
   /**
