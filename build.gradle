@@ -55,7 +55,7 @@ repositories {
 dependencies {
     compile wpi.deps.wpilib()
     compile wpi.deps.vendor.java()
-    compile 'com.revrobotics.frc:SparkMax-java:1.0.28'
+    compile 'com.revrobotics.frc:SparkMax-java:1.1.8'
 
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)

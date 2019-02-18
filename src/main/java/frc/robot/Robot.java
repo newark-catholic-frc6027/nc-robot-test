@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto choices", m_chooser);
 
     this.rightGearBoxMasterMotor = new CANSparkMax(22, MotorType.kBrushless);
-    this.leftGearBoxMasterMotor = new CANSparkMax(1, MotorType.kBrushless);
+    this.leftGearBoxMasterMotor = new CANSparkMax(21, MotorType.kBrushless);
 
 
     this.rightGearBoxSlave1 = new CANSparkMax(23, MotorType.kBrushless);
