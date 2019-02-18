@@ -117,7 +117,7 @@ public class Robot extends TimedRobot {
   }
 
   protected void runDrivetrainIfNeeded() {
-    this.robotDrive.tankDrive(this.joystick.getLeftAxis(), this.joystick.getRightAxis());
+    this.robotDrive.arcadeDrive(this.joystick.getLeftAxis(), this.joystick.getRightAxis());
 
   }
   /**
