@@ -27,19 +27,15 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private CANSparkMax rightGearBoxMasterMotor = new CANSparkMax(
-    22, MotorType.kBrushless);
-private CANSparkMax leftGearBoxMasterMotor = new CANSparkMax(
-    21, MotorType.kBrushless);
+  private CANSparkMax rightGearBoxMasterMotor = null;
+  private CANSparkMax leftGearBoxMasterMotor = null;
 
 
-private CANSparkMax rightGearBoxSlave1 = new CANSparkMax(
-    23, MotorType.kBrushless);
-private CANSparkMax leftGearBoxSlave1 = new CANSparkMax(
-    20, MotorType.kBrushless);
+   private CANSparkMax rightGearBoxSlave1 = null;
+   private CANSparkMax leftGearBoxSlave1 = null;
 
-    private RobotDrive robotDrive = new RobotDrive(leftGearBoxMasterMotor, rightGearBoxMasterMotor);
-    private XboxJoystick joystick = new XboxJoystick(0);
+   private RobotDrive robotDrive = null;
+   private XboxJoystick joystick = null;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -51,9 +47,19 @@ private CANSparkMax leftGearBoxSlave1 = new CANSparkMax(
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
 
+    this.rightGearBoxMasterMotor = new CANSparkMax(22, MotorType.kBrushless);
+    this.leftGearBoxMasterMotor = new CANSparkMax(1, MotorType.kBrushless);
+
+
+    this.rightGearBoxSlave1 = new CANSparkMax(23, MotorType.kBrushless);
+    this.leftGearBoxSlave1 = new CANSparkMax(20, MotorType.kBrushless);
+
     this.rightGearBoxSlave1.follow(rightGearBoxMasterMotor);
     this.leftGearBoxSlave1.follow(leftGearBoxMasterMotor);
 
+    this.robotDrive = new RobotDrive(leftGearBoxMasterMotor, rightGearBoxMasterMotor);
+    this.joystick = new XboxJoystick(0);
+ 
   }
 
   /**
