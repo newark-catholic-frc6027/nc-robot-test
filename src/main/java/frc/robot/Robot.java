@@ -54,8 +54,8 @@ public class Robot extends TimedRobot {
     this.rightGearBoxSlave1 = new CANSparkMax(23, MotorType.kBrushless);
     this.leftGearBoxSlave1 = new CANSparkMax(20, MotorType.kBrushless);
 
-    this.rightGearBoxSlave1.follow(rightGearBoxMasterMotor, true);
-    this.leftGearBoxSlave1.follow(leftGearBoxMasterMotor, true);
+    this.rightGearBoxSlave1.follow(rightGearBoxMasterMotor);
+    this.leftGearBoxSlave1.follow(leftGearBoxMasterMotor);
 
     this.robotDrive = new DifferentialDrive(leftGearBoxMasterMotor, rightGearBoxMasterMotor);
     this.joystick = new XboxJoystick(0);
