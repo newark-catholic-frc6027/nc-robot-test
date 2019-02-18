@@ -106,7 +106,7 @@ public class XboxJoystick extends XboxController {
         // Xbox controller outputs negative values for movement up and positive values for movement down,
         // but we want postive values for movement up which controls forward speed of the robot.  Therefore,
         // we invert the value.
-        return this.getRawAxis(-1 * 1);
+        return this.getRawAxis(1) * -1;
     }
     
     public double getRightAxis() {
